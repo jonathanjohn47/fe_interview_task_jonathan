@@ -47,6 +47,8 @@ class HomeScreen extends StatelessWidget {
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         colors: [
+                          Colors.black.withOpacity(0.3),
+                          Colors.black.withOpacity(0.2),
                           Colors.transparent,
                           Colors.black.withOpacity(0.5),
                           Colors.black.withOpacity(0.9),
@@ -75,7 +77,7 @@ class HomeScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 SizedBox(
-                  height: 80.sp,
+                  height: 60.sp,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -252,25 +254,41 @@ See who has a similar mind.""",
                             fontWeight: FontWeight.w400,
                             fontSize: 12.sp)),
                     Spacer(),
-                    IconBtn(
-                      child: Icon(
-                        Icons.mic,
-                      ),
-                      onPressed: () {},
-                      backgroundColor: Colors.transparent,
-                      foregroundColor: Get.theme.primaryColor,
-                      borderColor: Get.theme.primaryColor,
-                    ),
+                    Obx(() {
+                      return IconBtn(
+                        child: Icon(
+                          Icons.mic,
+                        ),
+                        onPressed: () {
+                          getController.pickedOption.value = 0;
+                        },
+                        backgroundColor: getController.pickedOption.value == 0
+                            ? AppColors.primary
+                            : Colors.transparent,
+                        foregroundColor: getController.pickedOption.value == 0
+                            ? Colors.black
+                            : Get.theme.primaryColor,
+                        borderColor: Get.theme.primaryColor,
+                      );
+                    }),
                     SizedBox(
                       width: 10.sp,
                     ),
-                    IconBtn(
-                      child: Icon(MdiIcons.arrowRight),
-                      onPressed: () {},
-                      backgroundColor: Get.theme.primaryColor,
-                      borderColor: Get.theme.primaryColor,
-                      foregroundColor: Colors.black,
-                    )
+                    Obx(() {
+                      return IconBtn(
+                        child: Icon(MdiIcons.arrowRight),
+                        onPressed: () {
+                          getController.pickedOption.value = 1;
+                        },
+                        backgroundColor: getController.pickedOption.value == 1
+                            ? AppColors.primary
+                            : Colors.transparent,
+                        foregroundColor: getController.pickedOption.value == 1
+                            ? Colors.black
+                            : Get.theme.primaryColor,
+                        borderColor: Get.theme.primaryColor,
+                      );
+                    })
                   ],
                 )
               ],
