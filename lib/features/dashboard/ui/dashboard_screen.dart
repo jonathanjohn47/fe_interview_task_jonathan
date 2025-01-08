@@ -28,7 +28,7 @@ class DashboardScreen extends StatelessWidget {
         ),
         bottomNavigationBar: TabBar(
           overlayColor: MaterialStateProperty.all(Colors.black),
-          indicator: UnderlineTabIndicator(
+          indicator: const UnderlineTabIndicator(
             borderSide: BorderSide.none, // Removes the border line
           ),
           indicatorColor: Colors.black,
@@ -47,6 +47,12 @@ class DashboardScreen extends StatelessWidget {
                   Positioned(
                     right: 0,
                     child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5.sp),
+                        color: Get.theme.primaryColor,
+                      ),
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 3.sp, vertical: 1.sp),
                       child: Text(
                         "10",
                         style: TextStyle(
@@ -54,12 +60,6 @@ class DashboardScreen extends StatelessWidget {
                             fontSize: 7.sp,
                             fontWeight: FontWeight.w700),
                       ),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5.sp),
-                        color: Get.theme.primaryColor,
-                      ),
-                      padding: EdgeInsets.symmetric(
-                          horizontal: 3.sp, vertical: 1.sp),
                     ),
                   )
                 ],
@@ -75,6 +75,12 @@ class DashboardScreen extends StatelessWidget {
                   Positioned(
                     right: 0,
                     child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5.sp),
+                        color: Get.theme.primaryColor,
+                      ),
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 3.sp, vertical: 1.sp),
                       child: Text(
                         "10",
                         style: TextStyle(
@@ -82,12 +88,6 @@ class DashboardScreen extends StatelessWidget {
                             fontSize: 7.sp,
                             fontWeight: FontWeight.w700),
                       ),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5.sp),
-                        color: Get.theme.primaryColor,
-                      ),
-                      padding: EdgeInsets.symmetric(
-                          horizontal: 3.sp, vertical: 1.sp),
                     ),
                   )
                 ],

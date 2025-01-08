@@ -156,12 +156,12 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                Spacer(),
+                const Spacer(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     CircleAvatar(
-                      backgroundImage: AssetImage("assets/images/img_3.png"),
+                      backgroundImage: const AssetImage("assets/images/img_3.png"),
                       radius: 30.sp,
                     ),
                     SizedBox(
@@ -193,7 +193,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    Spacer(
+                    const Spacer(
                       flex: 1,
                     ),
                     Expanded(
@@ -253,12 +253,9 @@ See who has a similar mind.""",
                             color: Colors.white,
                             fontWeight: FontWeight.w400,
                             fontSize: 12.sp)),
-                    Spacer(),
+                    const Spacer(),
                     Obx(() {
                       return IconBtn(
-                        child: Icon(
-                          Icons.mic,
-                        ),
                         onPressed: () {
                           getController.pickedOption.value = 0;
                         },
@@ -269,6 +266,9 @@ See who has a similar mind.""",
                             ? Colors.black
                             : Get.theme.primaryColor,
                         borderColor: Get.theme.primaryColor,
+                        child: const Icon(
+                          Icons.mic,
+                        ),
                       );
                     }),
                     SizedBox(
@@ -276,7 +276,6 @@ See who has a similar mind.""",
                     ),
                     Obx(() {
                       return IconBtn(
-                        child: Icon(MdiIcons.arrowRight),
                         onPressed: () {
                           getController.pickedOption.value = 1;
                         },
@@ -287,6 +286,7 @@ See who has a similar mind.""",
                             ? Colors.black
                             : Get.theme.primaryColor,
                         borderColor: Get.theme.primaryColor,
+                        child: Icon(MdiIcons.arrowRight),
                       );
                     })
                   ],
@@ -312,6 +312,16 @@ See who has a similar mind.""",
           onTap(index);
         },
         padding: EdgeInsets.zero,
+        style: NeumorphicStyle(
+          color: AppColors.darkColor,
+          shadowDarkColor: AppColors.darkColor.withOpacity(0.5),
+          shadowLightColor: AppColors.darkColor.withOpacity(0.5),
+          border: NeumorphicBorder(
+            color: isSelected ? Get.theme.primaryColor : Colors.transparent,
+            width: 2.0.sp,
+          ),
+          boxShape: NeumorphicBoxShape.roundRect(BorderRadius.circular(12.sp)),
+        ),
         child: Padding(
           padding: EdgeInsets.symmetric(vertical: 10.sp, horizontal: 6.sp),
           child: Row(
@@ -354,16 +364,6 @@ See who has a similar mind.""",
                           color: AppColors.greyColor, fontSize: 14.sp))),
             ],
           ),
-        ),
-        style: NeumorphicStyle(
-          color: AppColors.darkColor,
-          shadowDarkColor: AppColors.darkColor.withOpacity(0.5),
-          shadowLightColor: AppColors.darkColor.withOpacity(0.5),
-          border: NeumorphicBorder(
-            color: isSelected ? Get.theme.primaryColor : Colors.transparent,
-            width: 2.0.sp,
-          ),
-          boxShape: NeumorphicBoxShape.roundRect(BorderRadius.circular(12.sp)),
         ),
       ),
     );
