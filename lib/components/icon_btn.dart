@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class IconBtn extends StatelessWidget {
   const IconBtn(
@@ -19,20 +20,18 @@ class IconBtn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 40,
-      height: 40,
-      decoration: BoxDecoration(
-        color: backgroundColor ?? Colors.white,
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all(
-          color: borderColor ?? Colors.black,
-          width: borderWidth ?? 1,
-        ),
-      ),
-      child: const Icon(
-        Icons.menu,
-        color: Colors.black,
+    return IconButton(
+      onPressed: () {
+        onPressed();
+      },
+      icon: child,
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(backgroundColor),
+        foregroundColor: MaterialStateProperty.all(foregroundColor),
+        shape: MaterialStateProperty.all(CircleBorder(
+            side: BorderSide(
+                color: borderColor ?? Colors.transparent,
+                width: borderWidth ?? 2.sp))),
       ),
     );
   }

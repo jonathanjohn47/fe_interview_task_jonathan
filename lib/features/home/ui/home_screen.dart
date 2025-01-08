@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:fe_interview_task_jonathan/components/icon_btn.dart';
+import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -47,7 +48,6 @@ class HomeScreen extends StatelessWidget {
                       gradient: LinearGradient(
                         colors: [
                           Colors.transparent,
-                          Colors.transparent,
                           Colors.black.withOpacity(0.5),
                           Colors.black.withOpacity(0.9),
                         ],
@@ -70,7 +70,7 @@ class HomeScreen extends StatelessWidget {
         SizedBox(
           width: double.infinity,
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.sp),
+            padding: EdgeInsets.symmetric(horizontal: 10.sp),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -204,6 +204,74 @@ class HomeScreen extends StatelessWidget {
                               fontStyle: FontStyle.italic)),
                     ),
                   ],
+                ),
+                SizedBox(
+                  height: 10.sp,
+                ),
+                Table(
+                  children: [
+                    TableRow(children: [
+                      Obx(() => abcdCards(
+                              0,
+                              getController.currentIndex.value == 0,
+                              "The peace in the early mornings", (index) {
+                            getController.currentIndex.value = index;
+                          })),
+                      Obx(() => abcdCards(
+                              1,
+                              getController.currentIndex.value == 1,
+                              "The magical golden hours", (index) {
+                            getController.currentIndex.value = index;
+                          })),
+                    ]),
+                    TableRow(children: [
+                      Obx(() => abcdCards(
+                              2,
+                              getController.currentIndex.value == 2,
+                              "Wind-down time after dinners", (index) {
+                            getController.currentIndex.value = index;
+                          })),
+                      Obx(() => abcdCards(
+                              3,
+                              getController.currentIndex.value == 3,
+                              "The serenity past midnight", (index) {
+                            getController.currentIndex.value = index;
+                          })),
+                    ]),
+                  ],
+                ),
+                SizedBox(
+                  height: 10.sp,
+                ),
+                Row(
+                  children: [
+                    Text("""Pick your option.
+See who has a similar mind.""",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 12.sp)),
+                    Spacer(),
+                    IconBtn(
+                      child: Icon(
+                        Icons.mic,
+                      ),
+                      onPressed: () {},
+                      backgroundColor: Colors.transparent,
+                      foregroundColor: Get.theme.primaryColor,
+                      borderColor: Get.theme.primaryColor,
+                    ),
+                    SizedBox(
+                      width: 10.sp,
+                    ),
+                    IconBtn(
+                      child: Icon(MdiIcons.arrowRight),
+                      onPressed: () {},
+                      backgroundColor: Get.theme.primaryColor,
+                      borderColor: Get.theme.primaryColor,
+                      foregroundColor: Colors.black,
+                    )
+                  ],
                 )
               ],
             ),
@@ -215,5 +283,71 @@ class HomeScreen extends StatelessWidget {
 
   Widget webUi() {
     return Container();
+  }
+
+  Widget abcdCards(
+      int index, bool isSelected, String text, Function(int) onTap) {
+    return Padding(
+      padding: EdgeInsets.all(5.sp),
+      child: NeumorphicButton(
+        onPressed: () {
+          onTap(index);
+        },
+        padding: EdgeInsets.zero,
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: 10.sp, horizontal: 6.sp),
+          child: Row(
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: isSelected
+                        ? Get.theme.primaryColor
+                        : AppColors.greyColor,
+                    width: 2.0,
+                  ),
+                ),
+                child: CircleAvatar(
+                  backgroundColor:
+                      isSelected ? Get.theme.primaryColor : Colors.transparent,
+                  radius: 15.sp,
+                  foregroundColor: AppColors.greyColor,
+                  child: Text(
+                    index == 0
+                        ? "A"
+                        : index == 1
+                            ? "B"
+                            : index == 2
+                                ? "C"
+                                : "D",
+                    style: TextStyle(
+                        color: isSelected ? Colors.white : AppColors.greyColor,
+                        fontSize: 12.sp),
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: 5.sp,
+              ),
+              Expanded(
+                  child: Text(text,
+                      style: TextStyle(
+                          color: AppColors.greyColor, fontSize: 14.sp))),
+            ],
+          ),
+        ),
+        style: NeumorphicStyle(
+          color: AppColors.darkColor,
+          shadowDarkColor: AppColors.darkColor,
+          shadowLightColor: AppColors.darkColor,
+          border: NeumorphicBorder(
+            color: isSelected ? Get.theme.primaryColor : Colors.transparent,
+            width: 2.0.sp,
+          ),
+          boxShape: NeumorphicBoxShape.roundRect(BorderRadius.circular(12.sp)),
+        ),
+      ),
+    );
   }
 }
