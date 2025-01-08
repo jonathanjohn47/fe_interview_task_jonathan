@@ -357,8 +357,8 @@ See who has a similar mind.""",
         ),
         style: NeumorphicStyle(
           color: AppColors.darkColor,
-          shadowDarkColor: AppColors.darkColor,
-          shadowLightColor: AppColors.darkColor,
+          shadowDarkColor: AppColors.darkColor.withOpacity(0.5),
+          shadowLightColor: AppColors.darkColor.withOpacity(0.5),
           border: NeumorphicBorder(
             color: isSelected ? Get.theme.primaryColor : Colors.transparent,
             width: 2.0.sp,
