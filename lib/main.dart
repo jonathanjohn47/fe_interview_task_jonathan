@@ -1,5 +1,4 @@
-import 'package:fe_interview_task_jonathan/features/home/ui/home_screen.dart';
-import 'package:flutter/material.dart';
+import 'package:fe_interview_task_jonathan/features/dashboard/ui/dashboard_screen.dart';
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -39,7 +38,7 @@ class MyApp extends StatelessWidget {
             useMaterial3: true,
             fontFamily: 'ProximaNova',
           ),
-          home: HomeScreen(),
+          home: DashboardScreen(),
         ),
         darkTheme: NeumorphicThemeData(
           baseColor: Color(0xFF3E3E3E),
