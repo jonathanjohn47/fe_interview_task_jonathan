@@ -161,7 +161,8 @@ class HomeScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     CircleAvatar(
-                      backgroundImage: const AssetImage("assets/images/img_3.png"),
+                      backgroundImage:
+                          const AssetImage("assets/images/img_3.png"),
                       radius: 30.sp,
                     ),
                     SizedBox(
@@ -198,7 +199,8 @@ class HomeScreen extends StatelessWidget {
                     ),
                     Expanded(
                       flex: 5,
-                      child: Text("“Mine is definitely the peace in the morning.”",
+                      child: Text(
+                          "“Mine is definitely the peace in the morning.”",
                           style: TextStyle(
                               color: AppColors.lightPrimary,
                               fontWeight: FontWeight.w400,
