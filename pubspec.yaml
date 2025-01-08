@@ -37,18 +37,12 @@ dependencies:
   cupertino_icons: ^1.0.6
   get: ^4.6.6
   flutter_launcher_icons: ^0.14.2
-  flutter_html: ^3.0.0-beta.2
-  carousel_slider: ^5.0.0
-  dots_indicator: ^3.0.0
+
   image_picker: ^1.1.2
-  uuid: ^4.5.1
-  font_awesome_flutter: ^10.8.0
-  url_launcher: ^6.3.1
-  auto_size_text: ^3.0.0
-  flutter_widget_from_html: ^0.15.3
+
   material_design_icons_flutter: ^7.0.7296
   flutter_screenutil: ^5.9.3
-  google_fonts: ^6.2.1
+
 
 dev_dependencies:
   flutter_test:
@@ -76,6 +70,9 @@ flutter:
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/images/
+    - assets/fonts/proxima-nova/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -88,6 +85,42 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
+  fonts:
+    - family: ProximaNova
+      fonts:
+        - asset: assets/fonts/proxima-nova/ProximaNova-Black.ttf
+          weight: 900
+        - asset: assets/fonts/proxima-nova/ProximaNova-BlackIt.ttf
+          weight: 900
+          style: italic
+        - asset: assets/fonts/proxima-nova/ProximaNova-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/proxima-nova/ProximaNova-BoldIt.ttf
+          weight: 700
+          style: italic
+        - asset: assets/fonts/proxima-nova/ProximaNova-Extrabld.ttf
+          weight: 800
+        - asset: assets/fonts/proxima-nova/ProximaNova-ExtrabldIt.ttf
+          weight: 800
+          style: italic
+        - asset: assets/fonts/proxima-nova/ProximaNova-Light.ttf
+          weight: 300
+        - asset: assets/fonts/proxima-nova/ProximaNova-LightIt.ttf
+          weight: 300
+          style: italic
+        - asset: assets/fonts/proxima-nova/ProximaNova-Regular.ttf
+        - asset: assets/fonts/proxima-nova/ProximaNova-RegularIt.ttf
+          style: italic
+        - asset: assets/fonts/proxima-nova/ProximaNova-Semibold.ttf
+          weight: 600
+        - asset: assets/fonts/proxima-nova/ProximaNova-SemiboldIt.ttf
+          weight: 600
+          style: italic
+        - asset: assets/fonts/proxima-nova/ProximaNova-ThinIt.ttf
+          weight: 100
+          style: italic
+        - asset: assets/fonts/proxima-nova/ProximaNovaT-Thin.ttf
+          weight: 100
   # fonts:
   #   - family: Schyler
   #     fonts:
