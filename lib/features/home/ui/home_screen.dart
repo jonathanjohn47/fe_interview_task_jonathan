@@ -186,15 +186,23 @@ class HomeScreen extends StatelessWidget {
                     )
                   ],
                 ),
+                SizedBox(
+                  height: 10.sp,
+                ),
                 Row(
                   children: [
-                    SizedBox(),
-                    Text("“Mine is definitely the peace in the morning.”",
-                        style: TextStyle(
-                            color: AppColors.lightPrimary,
-                            fontWeight: FontWeight.w400,
-                            fontSize: 12.sp,
-                            fontStyle: FontStyle.italic)),
+                    Spacer(
+                      flex: 1,
+                    ),
+                    Expanded(
+                      flex: 5,
+                      child: Text("“Mine is definitely the peace in the morning.”",
+                          style: TextStyle(
+                              color: AppColors.lightPrimary,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 12.sp,
+                              fontStyle: FontStyle.italic)),
+                    ),
                   ],
                 )
               ],
